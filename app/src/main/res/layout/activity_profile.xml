@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sebasku.networks.activity.EditProfilActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_foto"
+            android:layout_width="@dimen/width_menu_ava"
+            android:layout_height="@dimen/width_menu_ava"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_editProvil_ava"
+            android:src="@drawable/user"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="@dimen/borderWidth_menu" />
+
+    <!--    <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/btn_upload_foto"
+            android:layout_width="30dp"
+            android:src="@drawable/ic_photo"
+            android:layout_height="30dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginLeft="170dp"/>-->
+
+<!--        <Button
+            android:id="@+id/btn_upload_foto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/button_2"
+            android:text="Upload"/>-->
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nama"
+            android:gravity="center"
+            android:id="@+id/tv_nama1"/>
+
+        <TextView
+            android:id="@+id/tv_bidang_developer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bidang_developer"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/tv_email1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/email"/>
+        <TextView
+            android:id="@+id/tv_no_hp1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/nomor_hp"/>
+
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginLeft_editProfil_et"
+            android:layout_marginLeft="@dimen/marginLeft_editProfil_et"
+            android:layout_marginRight="@dimen/marginLeft_editProfil_et"
+            android:background="@drawable/button_1"
+            android:text="Edit Profile"
+            android:textColor="@color/colorPrimary" />
+    </LinearLayout>
+</ScrollView>

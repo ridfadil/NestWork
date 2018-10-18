@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sebasku.networks.activity.EditProfilActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_foto"
+            android:layout_width="@dimen/width_menu_ava"
+            android:layout_height="@dimen/width_menu_ava"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_editProvil_ava"
+            android:src="@drawable/user"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="@dimen/borderWidth_menu" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/marginLeft_editProfil_et"
+            android:layout_marginRight="@dimen/marginLeft_editProfil_et">
+
+            <EditText
+                android:id="@+id/et_nama_update_profil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nama" />
+
+        </android.support.design.widget.TextInputLayout>
+
+      <!--  <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/marginLeft_editProfil_et"
+            android:layout_marginRight="@dimen/marginLeft_editProfil_et">
+
+            <EditText
+                android:id="@+id/et_tanggal_update_profil"
+                android:focusable="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/tanggal_lahir"
+                android:inputType="date" />
+
+        </android.support.design.widget.TextInputLayout>-->
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/marginLeft_editProfil_et"
+            android:layout_marginRight="@dimen/marginLeft_editProfil_et">
+
+            <EditText
+                android:id="@+id/et_bidang_update_profil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/bidang_developer" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/marginLeft_editProfil_et"
+            android:layout_marginRight="@dimen/marginLeft_editProfil_et">
+
+            <EditText
+                android:focusable="false"
+                android:id="@+id/et_email_update_profil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/marginLeft_editProfil_et"
+            android:layout_marginRight="@dimen/marginLeft_editProfil_et">
+
+            <EditText
+                android:id="@+id/et_nohp_update_profil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nomor_hp" />
+
+        </android.support.design.widget.TextInputLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/cardview_dark_background"
+            android:layout_margin="@dimen/marginLeft_editProfil_et"
+            android:layout_marginLeft="@dimen/marginLeft_editProfil_et"
+            android:layout_marginRight="@dimen/marginLeft_editProfil_et"/>
+
+        <Button
+            android:id="@+id/btn_stelan_privasi_akun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginLeft_editProfil_et"
+            android:layout_marginLeft="@dimen/marginLeft_editProfil_et"
+            android:layout_marginRight="@dimen/marginLeft_editProfil_et"
+            android:background="@drawable/button_2"
+            android:text="Stelan Privasi Akun"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/btn_submit_edit_profil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginLeft_editProfil_et"
+            android:layout_marginLeft="@dimen/marginLeft_editProfil_et"
+            android:layout_marginRight="@dimen/marginLeft_editProfil_et"
+            android:background="@drawable/button_1"
+            android:text="@string/update"
+            android:textColor="@color/colorPrimary" />
+    </LinearLayout>
+</ScrollView>

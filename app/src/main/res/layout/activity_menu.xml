@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorDivider"
+    android:orientation="vertical"
+    tools:context="com.sebasku.networks.activity.MenuActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:background="@drawable/gradient"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_foto"
+            android:layout_width="@dimen/width_menu_ava"
+            android:layout_height="@dimen/width_menu_ava"
+            android:layout_marginTop="@dimen/marginTop_menu_ava"
+            android:src="@drawable/user"
+            app:civ_border_color="@color/colorWhite"
+            android:layout_gravity="center"
+            app:civ_border_width="@dimen/borderWidth_menu" />
+
+        <TextView
+            android:id="@+id/nama_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nama_user"
+            android:textColor="@color/colorWhite"
+            android:layout_gravity="center"
+            android:textSize="@dimen/textSize_menu_namaUser" />
+
+        <TextView
+            android:id="@+id/job_role"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/marginBottom_menu_job"
+            android:layout_gravity="center"
+            android:text="@string/job_role"
+            android:textColor="@color/colorWhite" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_menu_main"
+        android:layout_margin="@dimen/margin_menu_main"
+        android:layout_weight="2"
+        android:background="@color/colorDivider"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_menu_subMain"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="@dimen/width_menu_card"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_menu_card"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/presensi_harian"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_menu_image"
+                        android:layout_weight="2"
+                        android:padding="20dp"
+                        android:src="@drawable/ic_presensi" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_menu_textMenu"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/presensi_harian"
+                        android:textSize="@dimen/textSize_menu_main" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="@dimen/width_menu_card"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_menu_card"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ajukan_cuti"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_menu_image"
+                        android:layout_weight="2"
+                        android:padding="20dp"
+                        android:src="@drawable/ic_cuti" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_menu_textMenu"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/ajukan_cuti"
+                        android:textSize="@dimen/textSize_menu_main" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="@dimen/width_menu_card"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_menu_card"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/slip_gaji"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_menu_image"
+                        android:layout_weight="2"
+                        android:padding="20dp"
+                        android:src="@drawable/ic_slip" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_menu_textMenu"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/slip_gaji"
+                        android:textSize="@dimen/textSize_menu_main" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="@dimen/width_menu_card"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_menu_card"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/informasi_perusahaan"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_menu_image"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:padding="20dp"
+                        android:src="@drawable/ic_informasi" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_menu_textMenu"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/informasi_perusahaan"
+                        android:textSize="@dimen/textSize_menu_main" />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

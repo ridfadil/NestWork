@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.sebasku.networks.fragment.RiwayatGajiFragment">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cd_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_fragRiwayatGaji_card"
+        android:layout_margin="@dimen/margin_fragRiwayatGaji_card"
+        android:padding="@dimen/padding_fragRiwayatGaji_card">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_info_sesi"
+                android:layout_width="@dimen/width_margin_fragRiwayatGaji_tv"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_fragRiwayatGaji_tv"
+                android:layout_weight="2"
+                android:text="@string/jan_sesi_1"
+                android:textColor="@color/colorWhite"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btn_detail"
+                android:layout_width="@dimen/width_fragRiwayat_button"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margigin_fragRiwayat_button"
+                android:layout_weight="1"
+                android:background="@drawable/button_2"
+                android:text="@string/detail"
+                android:textColor="@color/colorPrimaryDark" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

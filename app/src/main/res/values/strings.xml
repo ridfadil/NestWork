@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">NestWork</string>
+    <string name="request_slip_gaji">Silakan Request Slip gaji untuk Bulan Mei Sesi 1</string>
+    <string name="request_slip">Request</string>
+    <string name="riwayat_slip">Riwayat</string>
+    <string name="nama_user">Jesica Henwick</string>
+    <string name="job_role">Android Developer</string>
+    <string name="presensi_harian">Presensi Harian</string>
+    <string name="ajukan_cuti">Ajukan Cuti</string>
+    <string name="slip_gaji">Slip Gaji</string>
+    <string name="informasi_perusahaan">Info Perusahaan</string>
+    <string name="riwayat_cuti">Riwayat Cuti</string>
+    <string name="req_cuti">Request Cuti</string>
+    <string name="sesi">Januari Sesi 1</string>
+    <string name="nama">Nama :</string>
+    <string name="posisi">Posisi :</string>
+    <string name="jumlah_task">Jumlah Task :</string>
+    <string name="total_gaji">Total Gaji :</string>
+    <string name="jum_gaji">Rp 1.600.000</string>
+    <string name="jum_task">8</string>
+    <string name="nomor_hp">Nomor HP</string>
+    <string name="update">Update</string>
+    <string name="email">Email</string>
+    <string name="bidang_developer">Bidang Developer</string>
+    <string name="tanggal_lahir">Tanggal Lahir</string>
+    <string name="today">today.</string>
+    <string name="bulan">January</string>
+    <string name="tahun">2018</string>
+    <string name="note">Note</string>
+    <string name="task">Task</string>
+    <string name="status">Status</string>
+    <string name="obstacle">Obstacle</string>
+    <string name="will_do">Will Do</string>
+    <string name="backlog">Backlog</string>
+    <string name="profil">Profil</string>
+    <string name="isi_profil">Bandung adalah kota favorit, karena cuacanya, karena ketinggiannya jadi cuacanya dingin antara 19 sampai 24 celsius, dan Bandung juga merupakan kota pendidikan, di Bandung terdapat 80 perguruan tinggi, jadi kombinasi antara kota turis dan kota pendidikan, dan Bandung juga merupakan kota pemuda, karena lebih dari 2,5 miliar orang 60 persennya adalah dibawah 40 tahun jadi kemana pun kamu pergi, kamu pasti melihat aktivitas pemuda, semangat pemuda, pekerjaan komunitas pemuda.Semangat pemuda adalah kekuatan sebuah kota.</string>
+    <string name="peraturan">Peraturan</string>
+    <string name="isi_peraturan">Tantangan perkotaan, mencerminkan masalah dan tantangan disetiap kota metropolitan di Indonesia, seperti infrastruktur, bandung di desain sebagai taman kota, sejak zaman kolonial, di desain hanya untuk 300,000 orang, sekarang meledak menjadi 2,5 miliar orang, jadi masalah perumahan rakyat, masalah penanganan limbah, masalah suplai air, masalah transportasi umum. Jadi sebagai walikota dengan latarbelakang sebagai arsitek, saya fokus terhadap perubahan kota lima tahun kedepan diseluruh area ini. Jadi ini, ketika tantangan ini dapat ditanggapi oleh rencana kami, saya pikir dimasa depan Bandung menjadi kota terbaik untuk hidup di Indonesia, jadi itu semangat saya.</string>
+    <string name="req_slip_gaji">Request Slip Gaji</string>
+    <string name="anda_telah">Anda telah</string>
+    <string name="cuti_selama">cuti selama</string>
+    <string name="hari">hari</string>
+    <string name="awal_cuti">Awal Cuti :</string>
+    <string name="tanggal_cuti">1 Januari 2018</string>
+    <string name="akhir_cuti">Akhir Cuti :</string>
+    <string name="tanggal_akhir_cuti">20 Januari 2018</string>
+    <string name="keterangan">Keterangan :</string>
+    <string name="isi_keterangan_cuti">Umroh</string>
+    <string name="jan_sesi_1">JAN SESI 1</string>
+    <string name="detail">Detail</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="string_pick_up_image">Click Anywhere to Pickup Image</string>
+
+    <string name="settings">Settings</string>
+    <string name="help">Help</string>
+    <string name="string_help_text"> The permission is missing.\n\nTo grant this permission click on Settings, then Permissions and turn the permission on.\n\nThen click back twice to return to the app</string>
+    <string name="quit">Exit App</string>
+    <string name="string_title_upload_progressbar_">Uploading.. Wait for a while...</string>
+    <string name="string_upload_success">File Uploaded Successfully..</string>
+    <string name="string_upload_fail">Something went wrong</string>
+    <string name="string_internet_connection_warning">Internet Connection not Available</string>
+    <string name="string_message_to_attach_file">First attach file to upload</string>
+    <string name="string_choose_image">Select Image to Upload</string>
+    <string name="string_unable_to_pick_image">Unable to Pickup Image</string>
+    <string name="string_unable_to_load_image">Unable to Load Image</string>
+    <string name="string_reselect">Click on Image to Reselect</string>
+
+</resources>

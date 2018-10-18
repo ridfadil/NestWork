@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.sebasku.networks.activity.DetailGajiActivity">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_detailGaji_card">
+
+        <LinearLayout
+            android:background="@drawable/gradient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_detailGaji_tv">
+
+            <TextView
+                android:id="@+id/tv_sesi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="@string/sesi"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/textSize_detailGaji_tvJudul" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorWhite"
+                android:layout_marginBottom="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/marginBottom_detailGaji_row"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:gravity="left"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="@dimen/width_detailGaji_tvIsi"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nama" />
+
+                <TextView
+                    android:id="@+id/tv_nama"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nama_user" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/marginBottom_detailGaji_row"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:gravity="left"
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="@dimen/width_detailGaji_tvIsi"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Email" />
+
+                <TextView
+                    android:textColor="@color/colorWhite"
+                    android:id="@+id/tv_email_detail_gaji"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="Fadil@gmail.com" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/marginBottom_detailGaji_row"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="@color/colorWhite"
+                    android:gravity="left"
+                    android:layout_width="@dimen/width_detailGaji_tvIsi"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/posisi" />
+
+                <TextView
+                    android:layout_width="@dimen/width_detailGaji_tvIsi"
+                    android:textColor="@color/colorWhite"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="@string/job_role"
+                    android:id="@+id/tv_posisi"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/marginBottom_detailGaji_row"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="@color/colorWhite"
+                    android:gravity="left"
+                    android:layout_width="@dimen/width_detailGaji_tvIsi"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/jumlah_task" />
+
+
+                <TextView
+                    android:textColor="@color/colorWhite"
+                    android:id="@+id/tv_jum_task"
+                    android:layout_width="@dimen/width_detailGaji_tvIsi"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="@string/jum_task" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/marginBottom_detailGaji_row"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="@color/colorWhite"
+                    android:layout_width="@dimen/width_detailGaji_tvIsi"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_gaji" />
+
+                <TextView
+                    android:textColor="@color/colorWhite"
+                    android:id="@+id/tv_jum_gaji"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"                    android:layout_height="wrap_content"
+                    android:text="@string/jum_gaji" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
