@@ -66,11 +66,15 @@ public class EditPassword extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseUpdateProfil> call, Response<ResponseUpdateProfil> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), "Sukses Update Password", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(EditPassword.this,MenuActivity.class);
+                    Toast.makeText(getApplicationContext(), "Sukses Mengganti Password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Silakan Login Kembali", Toast.LENGTH_SHORT).show();
+                    session.logoutUser();
+                    Intent i = new Intent(EditPassword.this, LoginActivity.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(i);
                 } else {
                     Toast.makeText(getApplicationContext(), "Silakan Login kembali", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(EditPassword.this,LoginActivity.class);
+                    Intent i = new Intent(EditPassword.this, LoginActivity.class);
                     startActivity(i);
                 }
             }
@@ -112,7 +116,6 @@ public class EditPassword extends AppCompatActivity {
                     session.createNoHpSession(noHp);
                     usernameBaruPost = usernameBaru.getText().toString();
                     passBaruPost = passBaru.getText().toString();
-                    Toast.makeText(EditPassword.this, "Login Sudah Benar", Toast.LENGTH_SHORT).show();
                     gantiPass(usernameBaruPost, passBaruPost);
                 } else {
                     Toast.makeText(EditPassword.this, "Password dan Email Lama Salah", Toast.LENGTH_SHORT).show();
@@ -137,10 +140,9 @@ public class EditPassword extends AppCompatActivity {
                 mRePass = rePass.getText().toString();
                 if (mUsernameLama != null && mUsernameBaru != null && mPassLama != null && mPassBaru != null && mRePass != null) {
                     if (mPassBaru.equals(mRePass)) {
-                        if(  mPassBaru.length()>6){
+                        if (mPassBaru.length() > 6) {
                             cekLogin(mUsernameLama, mPassLama, mUsernameBaru, mPassBaru, mRePass);
-                        }
-                        else {
+                        } else {
                             Toast.makeText(EditPassword.this, "Maaf Password minimaml 6 Karakter", Toast.LENGTH_SHORT).show();
                         }
                     } else {
