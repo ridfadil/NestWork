@@ -52,7 +52,6 @@ public class RequestCutiFragment extends Fragment implements DatePickerDialog.On
 
         String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
 
-// textView is the TextView view that should display it
         tgl.setText(currentDateTimeString);
 
         requestCuti.setOnClickListener(new View.OnClickListener() {
@@ -67,15 +66,12 @@ public class RequestCutiFragment extends Fragment implements DatePickerDialog.On
                     session = new SessionManager(getContext());
                     String nama = session.getNama();
                     String mEmail = session.getEmail();
-                    Toast.makeText(getActivity(),"ini awal "+mAwalCuti,Toast.LENGTH_SHORT).show();
-                    Toast.makeText(getActivity(),"ini akhir "+mAkhirCuti,Toast.LENGTH_SHORT).show();
                     saveCuti(mEmail, nama, mAwalCuti, mAkhirCuti, mKeterangan, respons, status);
                 } else {
                     Toast.makeText(getActivity(), "Maaf Form Masih ada yang kosong", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
 
         awalCuti.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,11 +149,10 @@ public class RequestCutiFragment extends Fragment implements DatePickerDialog.On
         int monthFinal = i1 + 1;
         int dayFinal = i2;
         if (st == 0) {
-            awalCuti.setText("" + monthFinal + ":" +  dayFinal + ":" + yearFinal);
+            awalCuti.setText("" + monthFinal + "-" +  dayFinal + "-" + yearFinal);
         } else if (st == 1) {
-            akhirCuti.setText("" +  monthFinal + ":" + dayFinal + ":" + yearFinal);
+            akhirCuti.setText("" +  monthFinal + "-" + dayFinal + "-" + yearFinal);
         }
-
         /*        akhirCuti.setText(""+dayFinal+"-"+monthFinal+"-"+yearFinal);*/
     }
 }
