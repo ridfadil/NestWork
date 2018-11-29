@@ -62,35 +62,15 @@ public class RiwayatCutiAdapter extends RecyclerView.Adapter<RiwayatCutiAdapter.
     @Override
     public void onBindViewHolder(ListCutiViewHolder holder, int position) {
         SessionManager session;
-        final String respon, status;
+        final String status;
 
         session = new SessionManager(context);
         final ResponseRiwayatCuti mCurrent = listCuti.get(position);
 
-        //String sDate = dayOfMonth + "-" + (monthOfYear + 1) + "-" + year;
-        String awal = mCurrent.getAwalCuti();
-        String akhir = mCurrent.getAkhirCuti();
-        Toast.makeText(context,"ini awal "+awal,Toast.LENGTH_SHORT).show();
-        Toast.makeText(context,"ini akhir "+akhir,Toast.LENGTH_SHORT).show();
-        //SimpleDateFormat dateFormat = new SimpleDateFormat("d-M-yyyy");
-        /*SimpleDateFormat dateFormat = new SimpleDateFormat("EEE MMM dd yyyy HH:mm:ss z");
-        TimeZone tz = TimeZone.getTimeZone("Asia/Jakarta");
-        try {
-            Date awalDate = dateFormat.parse(awal);
-            Date akhirDate = dateFormat.parse(akhir);
-            dateFormat = new SimpleDateFormat("dd MMM yyyy");
-            dateFormat.setTimeZone(tz);
-            holder.awalCuti.setText(dateFormat.format(awalDate));
-            holder.akhirCuti.setText(dateFormat.format(akhirDate));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }*/
         // TODO : benarkan Format Date di cuti, Request Date , Benarkan Convert Date
         holder.awalCuti.setText(mCurrent.getAwalCuti());
         holder.akhirCuti.setText(mCurrent.getAkhirCuti());
         holder.keterangan.setText(mCurrent.getKeterangan());
-        //holder.tlKet.setText("Keterangan : ");
-        respon = mCurrent.getRespons();
         status = mCurrent.getStatus();
         if (status.equals("3")) {
             holder.gambar.setImageResource(R.drawable.waiting);
@@ -99,12 +79,6 @@ public class RiwayatCutiAdapter extends RecyclerView.Adapter<RiwayatCutiAdapter.
         } else if (status.equals("1")) {
             holder.gambar.setImageResource(R.drawable.ic_check);
         }
-        holder.tlCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(context, "ini respon : " + respon + " inistatus : " + status, Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     //untuk menghitung jumlah data yang ada pada list

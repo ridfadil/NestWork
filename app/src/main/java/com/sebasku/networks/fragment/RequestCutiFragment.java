@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -24,90 +25,83 @@ import com.sebasku.networks.apimodel.ResponseAjukanCuti;
 import com.sebasku.networks.session.SessionManager;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RequestCutiFragment extends Fragment implements DatePickerDialog.OnDateSetListener {
+public class RequestCutiFragment extends Fragment  {
     View viewRequestCuti;
     Button requestCuti;
-    EditText awalCuti, akhirCuti, keterangan, email;
-    String mAwalCuti, mAkhirCuti, mKeterangan, mEmail;
+    EditText awalCuti, akhirCuti, keterangan;
+    String mAwalCuti = "", mAkhirCuti = "", mKeterangan = "";
     TextView tgl;
-    int st;
     SessionManager session;
-    private int mYearIni, mMonthIni, mDayIni, mYearIni2, mMonthIni2, mDayIni2;
-    private int sYearIni, sMonthIni, sDayIni, sYearIni2, sMonthIni2, sDayIni2;
-    static final int DATE_ID = 0;
-    Calendar C = Calendar.getInstance();
-    Calendar C1 = Calendar.getInstance();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         viewRequestCuti = inflater.inflate(R.layout.fragment_request_cuti, container, false);
         init();
-
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
 
         tgl.setText(currentDateTimeString);
 
-        requestCuti.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!awalCuti.getText().toString().equals("") && !akhirCuti.getText().toString().equals("") && !keterangan.getText().toString().equals("")) {
-                    mAwalCuti = awalCuti.getText().toString();
-                    mAkhirCuti = akhirCuti.getText().toString();
-                    mKeterangan = keterangan.getText().toString();
-                    String respons = "0";
-                    String status = "3";
-                    session = new SessionManager(getContext());
-                    String nama = session.getNama();
-                    String mEmail = session.getEmail();
-                    saveCuti(mEmail, nama, mAwalCuti, mAkhirCuti, mKeterangan, respons, status);
-                } else {
-                    Toast.makeText(getActivity(), "Maaf Form Masih ada yang kosong", Toast.LENGTH_SHORT).show();
-                }
+        requestCuti.setOnClickListener(view -> {
+            if (!awalCuti.getText().toString().equals("") && !akhirCuti.getText().toString().equals("") && !keterangan.getText().toString().equals("")) {
+                mAwalCuti = awalCuti.getText().toString();
+                mAkhirCuti = akhirCuti.getText().toString();
+                mKeterangan = keterangan.getText().toString();
+                String respons = "0";
+                String status = "3";
+                session = new SessionManager(getContext());
+                String nama = session.getNama();
+                String mEmail = session.getEmail();
+                saveCuti(mEmail, nama, mAwalCuti, mAkhirCuti, mKeterangan, respons, status);
+            } else {
+                Toast.makeText(getActivity(), "Maaf Form Masih ada yang kosong", Toast.LENGTH_SHORT).show();
             }
         });
 
-        awalCuti.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Calendar c = Calendar.getInstance();
-                int year = c.get(Calendar.YEAR);
-                int month = c.get(Calendar.MONTH);
-                int day = c.get(Calendar.DAY_OF_MONTH);
-                st = 0;
-                DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), RequestCutiFragment.this, year, month, day);
-                datePickerDialog.show();
-            }
+
+        akhirCuti.setOnClickListener(view -> {
+            Calendar newCalendar = Calendar.getInstance();
+            DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), (view1, year, monthOfYear, dayOfMonth) -> {
+                Calendar newDate = Calendar.getInstance();
+                newDate.set(year, monthOfYear, dayOfMonth);
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+                mAkhirCuti = dateFormat.format(newDate.getTime());
+                SimpleDateFormat dateFormatter = new SimpleDateFormat("dd MMMM yyyy", Locale.US);
+                akhirCuti.setText(dateFormatter.format(newDate.getTime()));
+            }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
+            datePickerDialog.show();
         });
 
-        akhirCuti.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Calendar c1 = Calendar.getInstance();
-                int year = c1.get(Calendar.YEAR);
-                int month = c1.get(Calendar.MONTH);
-                int day = c1.get(Calendar.DAY_OF_MONTH);
-                st = 1;
-                DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), RequestCutiFragment.this, year, month, day);
-                datePickerDialog.show();
-            }
+        awalCuti.setOnClickListener(view -> {
+            Calendar newCalendar = Calendar.getInstance();
+            DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), (view1, year, monthOfYear, dayOfMonth) -> {
+                Calendar newDate = Calendar.getInstance();
+                newDate.set(year, monthOfYear, dayOfMonth);
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+                mAwalCuti = dateFormat.format(newDate.getTime());
+                SimpleDateFormat dateFormatter = new SimpleDateFormat("dd MMMM yyyy", Locale.US);
+                awalCuti.setText(dateFormatter.format(newDate.getTime()));
+            }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
+            datePickerDialog.show();
         });
-
 
         return viewRequestCuti;
     }
 
     public void init() {
-        awalCuti = (EditText) viewRequestCuti.findViewById(R.id.et_awal_cuti);
-        akhirCuti = (EditText) viewRequestCuti.findViewById(R.id.et_akhir_cuti);
-        keterangan = (EditText) viewRequestCuti.findViewById(R.id.et_keterangan_cuti);
-        requestCuti = (Button) viewRequestCuti.findViewById(R.id.btn_request_cuti);
+        awalCuti =  viewRequestCuti.findViewById(R.id.et_awal_cuti);
+        akhirCuti =  viewRequestCuti.findViewById(R.id.et_akhir_cuti);
+        keterangan =  viewRequestCuti.findViewById(R.id.et_keterangan_cuti);
+        requestCuti =  viewRequestCuti.findViewById(R.id.btn_request_cuti);
         tgl = viewRequestCuti.findViewById(R.id.tv_today_tglcuti);
     }
 
@@ -131,8 +125,6 @@ public class RequestCutiFragment extends Fragment implements DatePickerDialog.On
                     startActivity(i);
                 } else {
                     Toast.makeText(getActivity(), "Salah di Request", Toast.LENGTH_SHORT).show();
-                   /* Intent i = new Intent(getActivity().getApplication(),LoginActivity.class);
-                    startActivity(i);*/
                 }
             }
 
@@ -143,16 +135,4 @@ public class RequestCutiFragment extends Fragment implements DatePickerDialog.On
         });
     }
 
-    @Override
-    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-        int yearFinal = i;
-        int monthFinal = i1 + 1;
-        int dayFinal = i2;
-        if (st == 0) {
-            awalCuti.setText("" + monthFinal + "-" +  dayFinal + "-" + yearFinal);
-        } else if (st == 1) {
-            akhirCuti.setText("" +  monthFinal + "-" + dayFinal + "-" + yearFinal);
-        }
-        /*        akhirCuti.setText(""+dayFinal+"-"+monthFinal+"-"+yearFinal);*/
-    }
 }

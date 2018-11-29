@@ -27,7 +27,6 @@
 
         </FrameLayout>
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,8 +50,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/marginLeft_login"
-            android:layout_marginRight="@dimen/marginLeft_login"
-            android:layout_marginTop="@dimen/marginTop_editText">
+            android:layout_marginTop="@dimen/marginTop_editText"
+            android:layout_marginRight="@dimen/marginLeft_login">
 
             <EditText
                 android:id="@+id/et_email"
@@ -87,8 +86,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/marginLeft_login"
-            android:layout_marginRight="@dimen/marginLeft_login"
             android:layout_marginTop="@dimen/marginTop_login_buttonLogin"
+            android:layout_marginRight="@dimen/marginLeft_login"
             android:background="@drawable/button_login"
             android:text="LOGIN"
             android:textColor="@color/colorWhite" />

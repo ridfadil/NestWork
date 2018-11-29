@@ -159,37 +159,37 @@ public class SessionManager {
      * Get stored session data
      * */
     public String getAccesToken(){
-        String accesToken = pref.getString(KEY_ACCESSTOKEN, "missing");
+        String accesToken = pref.getString(KEY_ACCESSTOKEN, "Logout Berhasil");
 
         return accesToken;
     }
 
     public String getId(){
-        String accesId = pref.getString(KEY_ID, "missing");
+        String accesId = pref.getString(KEY_ID, "Logout Berhasil");
 
         return accesId;
     }
 
     public String getEmail(){
-        String accesEmail = pref.getString(KEY_EMAIL, "missing");
+        String accesEmail = pref.getString(KEY_EMAIL, "Logout Berhasil");
 
         return accesEmail;
     }
 
     public String getNama(){
-        String accesNama = pref.getString(KEY_NAMA, "missing");
+        String accesNama = pref.getString(KEY_NAMA, "Logout Berhasil");
 
         return accesNama;
     }
 
     public String getPosisi(){
-        String accesPosisi = pref.getString(KEY_POSISI, "missing");
+        String accesPosisi = pref.getString(KEY_POSISI, "Logout Berhasil");
 
         return accesPosisi;
     }
 
     public String getNoHp(){
-        String accesNoHp = pref.getString(KEY_NOHP, "missing");
+        String accesNoHp = pref.getString(KEY_NOHP, "Logout Berhasil");
 
         return accesNoHp;
     }

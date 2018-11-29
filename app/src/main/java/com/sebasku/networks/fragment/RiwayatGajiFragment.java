@@ -44,36 +44,34 @@ public class RiwayatGajiFragment extends Fragment {
         final SessionManager userPref = new SessionManager(getContext());
         String accesToken = userPref.getAccesToken();
         final String mEmail = userPref.getEmail();
-        Call<List<ResponseRiwayatGaji>> call = UtilsApi.getAPIService().getAllGaji("Bearer " + accesToken,mEmail);
+        Call<List<ResponseRiwayatGaji>> call = UtilsApi.getAPIService().getAllGaji("Bearer " + accesToken, mEmail);
         call.enqueue(new Callback<List<ResponseRiwayatGaji>>() {
             @Override
             public void onResponse(Call<List<ResponseRiwayatGaji>> call, Response<List<ResponseRiwayatGaji>> response) {
-                Toast.makeText(getActivity(), "Sedang Get Riwayat", Toast.LENGTH_SHORT).show();
                 if (response.isSuccessful()) {
                     List<ResponseRiwayatGaji> responsGaji = response.body();
                     for (int i = 0; i < responsGaji.size(); i++) {
                         String email = responsGaji.get(i).getEmail();
-                            String status = responsGaji.get(i).getStatus();
-                            String id = responsGaji.get(i).getId();
-                            String waktu = responsGaji.get(i).getWaktu();
-                            String gaji = responsGaji.get(i).getGaji();
-                            String jumTask = responsGaji.get(i).getJumlahTask();
-                            String createdAt = responsGaji.get(i).getCreatedAt();
-                            String updatedAt = responsGaji.get(i).getUpdatedAt();
-                            int v = responsGaji.get(i).getV();
-                            listRiwayatGaji.add(new ResponseRiwayatGaji(status,jumTask, id, email, waktu, gaji, createdAt, updatedAt, v));
-                            mAdapter.notifyDataSetChanged();
+                        String status = responsGaji.get(i).getStatus();
+                        String id = responsGaji.get(i).getId();
+                        String waktu = responsGaji.get(i).getWaktu();
+                        String gaji = responsGaji.get(i).getGaji();
+                        String jumTask = responsGaji.get(i).getJumlahTask();
+                        String createdAt = responsGaji.get(i).getCreatedAt();
+                        String updatedAt = responsGaji.get(i).getUpdatedAt();
+                        int v = responsGaji.get(i).getV();
+                        listRiwayatGaji.add(new ResponseRiwayatGaji(status, jumTask, id, email, waktu, gaji, createdAt, updatedAt, v));
+                        mAdapter.notifyDataSetChanged();
                     }
                 } else {
-                    //Toast.makeText(getActivity(), "Silakan Login kembali", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(getActivity(),LoginActivity.class);
+                    Intent i = new Intent(getActivity(), LoginActivity.class);
                     startActivity(i);
                 }
             }
 
             @Override
             public void onFailure(Call<List<ResponseRiwayatGaji>> call, Throwable t) {
-                //Toast.makeText(getActivity(), "Error connection", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Error connection", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -12,12 +12,13 @@
         android:orientation="vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:background="@color/colorPrimaryDark"
             android:id="@+id/user_foto"
             android:layout_width="@dimen/width_menu_ava"
             android:layout_height="@dimen/width_menu_ava"
             android:layout_gravity="center"
             android:layout_margin="@dimen/margin_profilPerusahaan_ava"
-            android:src="@drawable/ic_user"
+            android:src="@drawable/ic_note"
             app:civ_border_color="@color/colorPrimary"
             app:civ_border_width="@dimen/cardview_default_radius" />
 
@@ -64,7 +65,7 @@
                     android:id="@+id/tv_profil_company"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/isi_profil" />
+                    android:text="loading"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
@@ -91,7 +92,7 @@
                     android:id="@+id/tv_peraturan_company"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/isi_peraturan" />
+                    android:text="loading" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
     </LinearLayout>

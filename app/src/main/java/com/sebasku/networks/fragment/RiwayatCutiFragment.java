@@ -1,6 +1,5 @@
 package com.sebasku.networks.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,13 +10,12 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.sebasku.networks.R;
-import com.sebasku.networks.activity.LoginActivity;
 import com.sebasku.networks.adapter.RiwayatCutiAdapter;
 import com.sebasku.networks.api.UtilsApi;
 import com.sebasku.networks.apimodel.ResponseRiwayatCuti;
 import com.sebasku.networks.session.SessionManager;
+import com.sebasku.networks.utils.utilsDate;
 
-import java.sql.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -45,13 +43,13 @@ public class RiwayatCutiFragment extends Fragment {
         listRiwayatCuti = new ArrayList<>();
 
         final SessionManager userPref = new SessionManager(getContext());
+        utilsDate dateUtil = new utilsDate();
         String accesToken = userPref.getAccesToken();
         String email = userPref.getEmail();
         Call<List<ResponseRiwayatCuti>> call = UtilsApi.getAPIService().getOneCuti("Bearer " + accesToken, email);
         call.enqueue(new Callback<List<ResponseRiwayatCuti>>() {
             @Override
             public void onResponse(Call<List<ResponseRiwayatCuti>> call, Response<List<ResponseRiwayatCuti>> response) {
-                // Toast.makeText(getActivity(), "Sedang Get Riwayat", Toast.LENGTH_SHORT).show();
                 if (response.code() == 200) {
                     List<ResponseRiwayatCuti> responsCuti = response.body();
                     for (int i = 0; i < responsCuti.size(); i++) {
@@ -75,13 +73,15 @@ public class RiwayatCutiFragment extends Fragment {
                         String createdAt = responsCuti.get(i).getCreatedAt();
                         String updatedAt = responsCuti.get(i).getUpdatedAt();
                         int v = responsCuti.get(i).getV();
-                        listRiwayatCuti.add(new ResponseRiwayatCuti(respons, status, id, email, dateAwal, cutiAkhir, keterangan, nama, createdAt, updatedAt, v));
+
+                        String mAwalCuti = dateUtil.dateFormatter(dateAwal);
+                        String mAkhirCuti = dateUtil.dateFormatter(cutiAkhir);
+
+                        listRiwayatCuti.add(new ResponseRiwayatCuti(respons, status, id, email, mAwalCuti, mAkhirCuti, keterangan, nama, createdAt, updatedAt, v));
                         mAdapter.notifyDataSetChanged();
                     }
                 } else {
                     Toast.makeText(getActivity(), "Salah di riwayat Cuti", Toast.LENGTH_SHORT).show();
-                  /*  Intent i = new Intent(getActivity().getApplication(),LoginActivity.class);
-                    startActivity(i);*/
                 }
             }
 
@@ -112,11 +112,11 @@ public class RiwayatCutiFragment extends Fragment {
         String sDate = cutiAwal;
         String formatCutiAwal = "";
         SimpleDateFormat dateFormat;
-        dateFormat= new SimpleDateFormat("EEE dd MMM yyyy",Locale.ENGLISH);
+        dateFormat = new SimpleDateFormat("EEE dd MMM yyyy", Locale.ENGLISH);
         TimeZone tz = TimeZone.getTimeZone("Asia/Jakarta");
         try {
             Date newDate = dateFormat.parse(sDate);
-            dateFormat = new SimpleDateFormat("EEE dd MMM yyyy",Locale.ENGLISH);
+            dateFormat = new SimpleDateFormat("EEE dd MMM yyyy", Locale.ENGLISH);
             dateFormat.setTimeZone(tz);
             formatCutiAwal = dateFormat.format(newDate);
         } catch (ParseException e) {
@@ -124,16 +124,4 @@ public class RiwayatCutiFragment extends Fragment {
         }
         return formatCutiAwal;
     }
-
-
-    /*SimpleDateFormat formatIncoming =
-            new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
-    SimpleDateFormat formatOutgoing = new SimpleDateFormat("yyyy-MM-dd");
-    TimeZone tz = TimeZone.getTimeZone("Asia/Jakarta");
-System.out.println(tz.getDisplayName(false,TimeZone.SHORT,Locale.ENGLISH)); // WIB
-
-formatOutgoing.setTimeZone(tz);
-    String s = formatOutgoing.format(formatIncoming.parse("Tue Mar 03 00:00:00 WIB 2015"));
-
-System.out.println("Date in Indonesia: "+s); // 2015-03-03*/
 }

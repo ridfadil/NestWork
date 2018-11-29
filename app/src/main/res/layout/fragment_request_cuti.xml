@@ -9,77 +9,80 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
 
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="2dp"
+                android:text="Silakan isi Form Cuti"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_today_tglcuti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="21"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/et_awal_cuti"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:drawableRight="@drawable/ic_calendar"
+                android:focusable="false"
+                android:hint="Awal Cuti"
+                android:inputType="date" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Silakan isi Form Cuti"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="25sp"
-                    android:layout_marginBottom="2dp"/>
 
-                <TextView
-                    android:id="@+id/tv_today_tglcuti"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="2dp"
-                    android:text="21"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="15sp" />
+            <EditText
+                android:id="@+id/et_akhir_cuti"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:drawableRight="@drawable/ic_calendar"
+                android:focusable="false"
+                android:hint="Akhir Cuti "
+                android:inputType="date" />
 
-                <EditText
-                    android:id="@+id/et_awal_cuti"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="20dp"
-                    android:hint="Awal Cuti"
-                    android:focusable="false"
-                    android:inputType="date" />
+            <EditText
+                android:id="@+id/et_keterangan_cuti"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:hint="Keterangan" />
 
-                <EditText
-                    android:id="@+id/et_akhir_cuti"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:hint="Akhir Cuti "
-                    android:focusable="false"
-                    android:inputType="date"/>
-
-                <EditText
-                    android:id="@+id/et_keterangan_cuti"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:hint="Keterangan" />
-
-                <Button
-                    android:id="@+id/btn_request_cuti"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/button_1"
-                    android:text="Request Cuti"
-                    android:textColor="@color/colorPrimary" />
-            </LinearLayout>
+            <Button
+                android:id="@+id/btn_request_cuti"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_1"
+                android:text="Request Cuti"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
